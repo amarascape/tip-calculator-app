@@ -96,6 +96,16 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - https://nextjs.org/docs/basic-features/eslint#disabling-rules - how to disable eslint rules in next
 
+- https://www.w3schools.com/howto/howto_css_list_without_bullets.asp
+
+- https://www.w3schools.com/tags/tag_input.asp
+
+- https://www.w3schools.com/tags/att_input_type.asp
+  - https://www.w3schools.com/tags/att_input_type_button.asp
+  - https://www.w3schools.com/tags/att_input_type_number.asp
+  - https://www.w3schools.com/tags/att_input_type_reset.asp
+  - https://www.w3schools.com/tags/att_input_type_submit.asp
+
 ## Author
 
 - Website - [Add your name here](https://www.your-site.com)

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Form from "./Form.js";
 import "../styles/globals.css";
 
 function MyApp() {
@@ -27,8 +28,7 @@ function MyApp() {
       </Head>
       <main>
         <img id="SPLITTER-LOGO" src="/logo.svg" alt="" />
-        Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount
-        / person Total / person Reset
+        <Form />
       </main>
       <footer className="attribution">
         Challenge by{" "}
