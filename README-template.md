@@ -101,10 +101,13 @@ Use this section to outline areas that you want to continue focusing on in futur
 - https://www.w3schools.com/tags/tag_input.asp
 
 - https://www.w3schools.com/tags/att_input_type.asp
+
   - https://www.w3schools.com/tags/att_input_type_button.asp
   - https://www.w3schools.com/tags/att_input_type_number.asp
   - https://www.w3schools.com/tags/att_input_type_reset.asp
   - https://www.w3schools.com/tags/att_input_type_submit.asp
+
+- https://nextjs.org/blog/forms
 
 ## Author
 

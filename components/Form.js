@@ -20,22 +20,48 @@ function Form() {
       <h1 className={styles.selectTipHeader}>Select Tip %</h1>
       <ul className={styles.tipPercentList}>
         <li>
-          <input type="button" value="5%"></input>
+          <input
+            className={styles.tipPercentInput}
+            type="button"
+            value="5%"
+          ></input>
         </li>
         <li>
-          <input type="button" value="10%"></input>
+          <input
+            className={styles.tipPercentInput}
+            type="button"
+            value="10%"
+          ></input>
         </li>
         <li>
-          <input type="button" value="15%"></input>
+          <input
+            id={styles.fifteenPercent}
+            className={styles.tipPercentInput}
+            type="button"
+            value="15%"
+          ></input>
         </li>
         <li>
-          <input type="button" value="25%"></input>
+          <input
+            className={styles.tipPercentInput}
+            type="button"
+            value="25%"
+          ></input>
         </li>
         <li>
-          <input type="button" value="50%"></input>
+          <input
+            className={styles.tipPercentInput}
+            type="button"
+            value="50%"
+          ></input>
         </li>
         <li>
-          <input type="button" value="Custom"></input>
+          <input
+            id={styles.customPercent}
+            className={styles.tipPercentInput}
+            type="button"
+            value="Custom"
+          ></input>
         </li>
       </ul>
       {/* || NUMBER OF PEOPLE INPUT */}
