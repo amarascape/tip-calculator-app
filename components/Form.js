@@ -8,7 +8,7 @@ function Form() {
   return (
     <form className={styles.tipCalculatorForm} onSubmit={calculateTip}>
       {/* || BILL INPUT */}
-      <h1 classNames={styles.billHeader}>Bill</h1>
+      <h1 className={styles.billHeader}>Bill</h1>
       <input
         type="number"
         id="billAmount"
@@ -74,25 +74,28 @@ function Form() {
         max="1000000"
       />
       {/* || CALCULATIONS OUTPUT */}
-      <div className={styles.calculationsOutput}>
+      <div className={styles.calculationsParent}>
         <div className={styles.calculationOutput}>
-          <div>
+          {/* || CALCULATION: TIP AMOUNT PER PERSON */}
+          <div className={styles.calculationOutputLabel}>
             <h1 id="TIP-AMOUNT-HEADER">Tip Amount</h1>
             <p>/ person</p>
           </div>
-          <div>$ ???.??</div>
+          <div className={styles.calculationOutputResult}>$ ???.??</div>
         </div>
+        {/* || CALCULATION: TOTAL PER PERSON */}
         <div className={styles.calculationOutput}>
-          <div>
+          <div className={styles.calculationOutputLabel}>
             <h1 id="TOTAL-HEADER">Total</h1>
             <p>/ person</p>
           </div>
-          <div>$ ???.??</div>
+          <div className={styles.calculationOutputResult}>$ ???.??</div>
         </div>
+        {/* || CALCULATION: RESET BUTTON */}
+        <button type="submit" className={styles.resetButton}>
+          Reset
+        </button>
       </div>
-
-      {/* || RESET BUTTON */}
-      <a>Reset</a>
     </form>
   );
 }

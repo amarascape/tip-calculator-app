@@ -26,23 +26,21 @@ function MyApp() {
           rel="stylesheet"
         />
       </Head>
-      <body>
-        <main>
-          <img id="SPLITTER-LOGO" src="/logo.svg" alt="" />
-          <Form />
-        </main>
-        <footer className="attribution">
-          Challenge by{" "}
-          <a
-            href="https://www.frontendmentor.io?ref=challenge"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Frontend Mentor
-          </a>
-          . Coded by <a href="#">Your Name Here</a>.
-        </footer>
-      </body>
+      <main>
+        <img id="SPLITTER-LOGO" src="/logo.svg" alt="" />
+        <Form />
+      </main>
+      <footer className="attribution">
+        Challenge by{" "}
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Frontend Mentor
+        </a>
+        . Coded by <a href="#">Your Name Here</a>.
+      </footer>
     </div>
   );
 }
