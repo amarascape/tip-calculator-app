@@ -74,12 +74,23 @@ function Form() {
         max="1000000"
       />
       {/* || CALCULATIONS OUTPUT */}
-      <h1 id="TIP-AMOUNT-HEADER">Tip Amount</h1>
-      <p>/ person</p>
-      <div>$ ???.??</div>
-      <h1 id="TOTAL-HEADER">Total</h1>
-      <p>/ person</p>
-      <div>$ ???.??</div>
+      <div className={styles.calculationsOutput}>
+        <div className={styles.calculationOutput}>
+          <div>
+            <h1 id="TIP-AMOUNT-HEADER">Tip Amount</h1>
+            <p>/ person</p>
+          </div>
+          <div>$ ???.??</div>
+        </div>
+        <div className={styles.calculationOutput}>
+          <div>
+            <h1 id="TOTAL-HEADER">Total</h1>
+            <p>/ person</p>
+          </div>
+          <div>$ ???.??</div>
+        </div>
+      </div>
+
       {/* || RESET BUTTON */}
       <a>Reset</a>
     </form>

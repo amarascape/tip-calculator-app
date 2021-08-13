@@ -51,3 +51,35 @@ input#customPercent {
   color: hsl(186, 14%, 43%);
   background-color: hsl(185, 41%, 84%);
 }
+
+/* || CALCULATIONS OUTPUT */
+
+.calculationsOutput {
+  border-radius: 1rem;
+  background-color: hsl(183, 100%, 15%);
+}
+
+.calculationsOutput h1 {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.calculationsOutput p {
+  color: hsl(185, 41%, 84%);
+  margin: 0;
+  padding: 0;
+}
+
+.calculationsOutput div {
+  color: hsl(185, 41%, 84%);
+}
+
+.calculationOutput {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+}
