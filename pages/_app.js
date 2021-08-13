@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import "../styles/globals.css";
 
 function MyApp() {
@@ -9,12 +10,14 @@ function MyApp() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon-32x32.png" />
         <title>Frontend Mentor | Tip calculator app</title>
+        {/* Bootstrap CSS */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
           crossOrigin="anonymous"
         />
+        {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
@@ -23,6 +26,7 @@ function MyApp() {
         />
       </Head>
       <main>
+        <img id="SPLITTER-LOGO" src="/logo.svg" alt="" />
         Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount
         / person Total / person Reset
       </main>

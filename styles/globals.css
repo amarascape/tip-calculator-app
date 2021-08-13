@@ -46,6 +46,12 @@ body {
   font-family: "Space Mono", monospace;
 }
 
+/* || LOGO */
+
+#SPLITTER-LOGO {
+  display: block;
+}
+
 /* || ATTRIBUTION */
 
 .attribution {
