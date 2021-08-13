@@ -1,15 +1,24 @@
+import styles from "./Form.module.css";
+
 function Form() {
   const calculateTip = async (event) => {
     event.preventDefault();
   };
 
   return (
-    <form onSubmit={calculateTip}>
+    <form className={styles.tipCalculatorForm} onSubmit={calculateTip}>
       {/* || BILL INPUT */}
-      <h1 id="BILL-HEADER">Bill</h1>
+      <h1 classNames={styles.billHeader}>Bill</h1>
+      <input
+        type="number"
+        id="billAmount"
+        name="billAmount"
+        min="1"
+        max="1000000"
+      />
       {/* || TIP PERCENT INPUT */}
-      <h1 id="SELECT-TIP-HEADER">Select Tip %</h1>
-      <ul id="TIP-PERCENT-LIST">
+      <h1 className={styles.selectTipHeader}>Select Tip %</h1>
+      <ul className={styles.tipPercentList}>
         <li>
           <input type="button" value="5%"></input>
         </li>
@@ -30,12 +39,21 @@ function Form() {
         </li>
       </ul>
       {/* || NUMBER OF PEOPLE INPUT */}
-      <h1 id="NUMBER-OF-PEOPLE-HEADER">Number of People</h1>
+      <h1 className={styles.numberOfPeopleHeader}>Number of People</h1>
+      <input
+        type="number"
+        id="numberOfPeople"
+        name="numberOfPeople"
+        min="1"
+        max="1000000"
+      />
       {/* || CALCULATIONS OUTPUT */}
       <h1 id="TIP-AMOUNT-HEADER">Tip Amount</h1>
       <p>/ person</p>
+      <div>$ ???.??</div>
       <h1 id="TOTAL-HEADER">Total</h1>
       <p>/ person</p>
+      <div>$ ???.??</div>
       {/* || RESET BUTTON */}
       <a>Reset</a>
     </form>

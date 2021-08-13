@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import Form from "./Form.js";
+import Form from "../components/Form.js";
 import "../styles/globals.css";
 
 function MyApp() {
   return (
-    <div>
+    <div className="myApp">
       <Head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,21 +26,23 @@ function MyApp() {
           rel="stylesheet"
         />
       </Head>
-      <main>
-        <img id="SPLITTER-LOGO" src="/logo.svg" alt="" />
-        <Form />
-      </main>
-      <footer className="attribution">
-        Challenge by{" "}
-        <a
-          href="https://www.frontendmentor.io?ref=challenge"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Frontend Mentor
-        </a>
-        . Coded by <a href="#">Your Name Here</a>.
-      </footer>
+      <body>
+        <main>
+          <img id="SPLITTER-LOGO" src="/logo.svg" alt="" />
+          <Form />
+        </main>
+        <footer className="attribution">
+          Challenge by{" "}
+          <a
+            href="https://www.frontendmentor.io?ref=challenge"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Frontend Mentor
+          </a>
+          . Coded by <a href="#">Your Name Here</a>.
+        </footer>
+      </body>
     </div>
   );
 }
