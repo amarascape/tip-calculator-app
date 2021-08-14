@@ -181,9 +181,9 @@ function Form() {
             <h1 id="TIP-AMOUNT-HEADER">Tip Amount</h1>
             <p>/ person</p>
           </div>
-          <p className={styles.calculationOutputResult} id="TIP-PER-PERSON">
+          <div className={styles.calculationOutputResult} id="TIP-PER-PERSON">
             $ ???.??
-          </p>
+          </div>
         </div>
         {/* || CALCULATION: TOTAL PER PERSON */}
         <div className={styles.calculationOutput}>

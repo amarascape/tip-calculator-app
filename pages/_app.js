@@ -39,7 +39,7 @@ function MyApp() {
         >
           Frontend Mentor
         </a>
-        . Coded by <a href="#">Your Name Here</a>.
+        . Coded by <a href="#">amarascape</a>.
       </footer>
     </div>
   );
