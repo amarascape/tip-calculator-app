@@ -1,8 +1,42 @@
 import styles from "./Form.module.css";
 
 function Form() {
+  let tipPercent = 0;
+
+  const setTipPercent = async (event) => {
+    event.preventDefault();
+
+    //get the input clicked
+    const target = event.target;
+
+    //set the id value as the new tipPercent
+    if (target.value === "15%") {
+      tipPercent = 0.15;
+    } else {
+      if (target.value === "Custom") {
+        tipPercent = "handle custom";
+      } else {
+        tipPercent = target.id;
+      }
+    }
+  };
+
   const calculateTip = async (event) => {
     event.preventDefault();
+
+    const billAmount = document.querySelector("#billAmount").value;
+    console.log("billAmount:", billAmount);
+
+    const numberOfPeople = document.querySelector("#numberOfPeople").value;
+    console.log("numberOfPeople:", numberOfPeople);
+
+    const tipPerPerson = (billAmount * tipPercent) / numberOfPeople;
+    const totalPerPerson = billAmount / numberOfPeople;
+
+    const outputTipPerPerson = document.querySelector("#TIP-PER-PERSON");
+    console.log("before:", outputTipPerPerson.value);
+    outputTipPerPerson.innerText = "$ " + tipPerPerson;
+    console.log("after:", outputTipPerPerson.value);
   };
 
   return (
@@ -13,17 +47,21 @@ function Form() {
         type="number"
         id="billAmount"
         name="billAmount"
+        placeholder="1"
         min="1"
-        max="1000000"
+        max="10000"
+        required
       />
       {/* || TIP PERCENT INPUT */}
       <h1 className={styles.selectTipHeader}>Select Tip %</h1>
-      <ul className={styles.tipPercentList}>
+      <ul className={styles.tipPercentList} id="TIP-PERCENT-LIST">
         <li>
           <input
             className={styles.tipPercentInput}
             type="button"
             value="5%"
+            id="0.05"
+            onClick={setTipPercent}
           ></input>
         </li>
         <li>
@@ -31,6 +69,8 @@ function Form() {
             className={styles.tipPercentInput}
             type="button"
             value="10%"
+            id="0.10"
+            onClick={setTipPercent}
           ></input>
         </li>
         <li>
@@ -39,6 +79,7 @@ function Form() {
             className={styles.tipPercentInput}
             type="button"
             value="15%"
+            onClick={setTipPercent}
           ></input>
         </li>
         <li>
@@ -46,6 +87,8 @@ function Form() {
             className={styles.tipPercentInput}
             type="button"
             value="25%"
+            id="0.25"
+            onClick={setTipPercent}
           ></input>
         </li>
         <li>
@@ -61,6 +104,7 @@ function Form() {
             className={styles.tipPercentInput}
             type="button"
             value="Custom"
+            onClick={setTipPercent}
           ></input>
         </li>
       </ul>
@@ -70,8 +114,10 @@ function Form() {
         type="number"
         id="numberOfPeople"
         name="numberOfPeople"
+        placeholder="1"
         min="1"
-        max="1000000"
+        max="10000"
+        required
       />
       {/* || CALCULATIONS OUTPUT */}
       <div className={styles.calculationsParent}>
@@ -81,7 +127,9 @@ function Form() {
             <h1 id="TIP-AMOUNT-HEADER">Tip Amount</h1>
             <p>/ person</p>
           </div>
-          <div className={styles.calculationOutputResult}>$ ???.??</div>
+          <p className={styles.calculationOutputResult} id="TIP-PER-PERSON">
+            $ ???.??
+          </p>
         </div>
         {/* || CALCULATION: TOTAL PER PERSON */}
         <div className={styles.calculationOutput}>
@@ -89,9 +137,14 @@ function Form() {
             <h1 id="TOTAL-HEADER">Total</h1>
             <p>/ person</p>
           </div>
-          <div className={styles.calculationOutputResult}>$ ???.??</div>
+          <div className={styles.calculationOutputResult} id="TOTAL-PER-PERSON">
+            $ ???.??
+          </div>
         </div>
         {/* || CALCULATION: RESET BUTTON */}
+        <button type="submit" className={styles.resetButton}>
+          Submit
+        </button>
         <button type="submit" className={styles.resetButton}>
           Reset
         </button>

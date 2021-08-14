@@ -82,6 +82,10 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - https://nextjs.org/blog/forms
 
+- https://stackoverflow.com/questions/2554149/html-javascript-change-div-content
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+
 ## Author
 
 - Website - [Add your name here](https://www.your-site.com)
