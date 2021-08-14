@@ -3,6 +3,11 @@ import styles from "./Form.module.css";
 function Form() {
   let tipPercent = 0;
 
+  /**
+   * Responds to the user selecting or setting a tip percent
+   * by reading the value and setting the variable
+   * tipPercent to that value.
+   */
   const setTipPercent = async (event) => {
     event.preventDefault();
 
@@ -21,7 +26,12 @@ function Form() {
     }
   };
 
-  const calculateTip = async (event) => {
+  /**
+   * Calculate the tip and total per person and
+   * changes the innerText of the display elements
+   * as needed.
+   */
+  function calculateTip() {
     event.preventDefault();
 
     const billAmount = document.querySelector("#billAmount").value;
@@ -37,19 +47,63 @@ function Form() {
     console.log("before:", outputTipPerPerson.value);
     outputTipPerPerson.innerText = "$ " + tipPerPerson;
     console.log("after:", outputTipPerPerson.value);
+
+    const outputTotalPerPerson = document.querySelector("#TOTAL-PER-PERSON");
+    console.log("before:", outputTotalPerPerson.value);
+    outputTotalPerPerson.innerText = "$ " + totalPerPerson;
+    console.log("after:", outputTotalPerPerson.value);
+  }
+
+  /**
+   * Checks each required value to see if they have been
+   * filled approproately.
+   * If true, calls calculateTip().
+   * Otherside, displays warning messages to the user.
+   */
+  const attemptSubmit = async (event) => {
+    event.preventDefault();
+
+    let allRequiredFieldsFilled = true;
+
+    let errorMessage =
+      "Please ensure that all of these fields are filled and try again: ";
+
+    //required fields
+    if (tipPercent === 0) {
+      allRequiredFieldsFilled = false;
+      errorMessage = errorMessage + "  tip percent";
+    }
+
+    const billAmount = document.querySelector("#billAmount").value;
+    if (billAmount === "") {
+      allRequiredFieldsFilled = false;
+      errorMessage = errorMessage + "  bill amount";
+    }
+
+    const numberOfPeople = document.querySelector("#numberOfPeople").value;
+    if (numberOfPeople === "") {
+      allRequiredFieldsFilled = false;
+      errorMessage = errorMessage + "  number of people";
+    }
+
+    if (allRequiredFieldsFilled) {
+      calculateTip();
+    } else {
+      // alert(errorMessage);
+    }
   };
 
   return (
-    <form className={styles.tipCalculatorForm} onSubmit={calculateTip}>
+    <form className={styles.tipCalculatorForm} onSubmit={attemptSubmit}>
       {/* || BILL INPUT */}
       <h1 className={styles.billHeader}>Bill</h1>
       <input
         type="number"
         id="billAmount"
         name="billAmount"
-        placeholder="1"
         min="1"
         max="10000"
+        onChange={attemptSubmit}
         required
       />
       {/* || TIP PERCENT INPUT */}
@@ -102,8 +156,8 @@ function Form() {
           <input
             id={styles.customPercent}
             className={styles.tipPercentInput}
-            type="button"
-            value="Custom"
+            type="text"
+            placeholder="Custom"
             onClick={setTipPercent}
           ></input>
         </li>
@@ -114,9 +168,9 @@ function Form() {
         type="number"
         id="numberOfPeople"
         name="numberOfPeople"
-        placeholder="1"
         min="1"
         max="10000"
+        onChange={attemptSubmit}
         required
       />
       {/* || CALCULATIONS OUTPUT */}
