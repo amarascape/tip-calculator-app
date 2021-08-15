@@ -14,6 +14,23 @@ function Form() {
     //get the input clicked
     const target = event.target;
 
+    //reset styling on previous selected tip percent
+    const previousTipPercent = document.querySelector(
+      ".tip-percent-is-selected"
+    );
+    if (previousTipPercent !== null) {
+      previousTipPercent.classList.remove("tip-percent-is-selected");
+      previousTipPercent.color = "white";
+      previousTipPercent.backgroundColor = "hsl(183, 100%, 15%)";
+    }
+    console.log("previous:", previousTipPercent);
+
+    //set styling on new selected tip percent
+    console.log("setting selected styliing to", target);
+    target.classList.add("tip-percent-is-selected");
+    target.color = "red !important";
+    target.backgroundColor = "blue";
+
     //set the id value as the new tipPercent
     if (target.value === "15%") {
       tipPercent = 0.15;
